@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meteor Legends - Descarga</title>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <!-- FontAwesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Fuente bonita desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset y estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: #1f1f1f;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* Sección de descripción y características */
+    .description, .features, .requirements, .alert {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #1f1f1f;
+      border-radius: 8px;
+    }
+    .features ul {
+      list-style: none;
+    }
+    .features li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+    /* Sección de descarga */
+    .download-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .download-btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .download-btn:hover {
+      background-color: #444;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+    /* Aviso importante */
+    .alert {
+      background-color: #b71c1c;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+    }
+    /* Popunder */
+    #popunder {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      width: 300px;
+      background-color: #fff;
+      border: 2px solid #444;
+      z-index: 10000;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      display: block;
+    }
+    #popunder button#closePopunder {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    /* Responsividad */
+    @media (max-width: 768px) {
+      .download-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      #popunder {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Popunder de Adsterra -->
+  <div id="popunder">
+    <button id="closePopunder">✖</button>
+    <div id="popunderContent">
+      <!-- Script del anuncio de Adsterra -->
+      <script type="text/javascript" src="//pl25843661.effectiveratecpm.com/1c/9c/3d/1c9c3de12ec920b8f9163c89a0e624de.js"></script>
+    </div>
+  </div>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>Meteor Legends</h1>
+  </header>
+  <div class="container">
+    <!-- Descripción del juego -->
+    <div class="description">
+      <h2>Descripción del Juego</h2>
+      <p>
+        Es un fangame gratuito que reinventa la experiencia de los combates en el universo de Dragon Ball. Con multijugador global, podrás enfrentarte a jugadores de todo el mundo en batallas épicas. El sistema de inicio de sesión y registro con almacenamiento en la nube asegura que tu progreso y personalización estén siempre a salvo y disponibles desde cualquier lugar.
+      </p>
+      <p>
+        Con un diseño fiel a la esencia de la franquicia y nuevas mecánicas que amplían la experiencia, Meteor Legends promete ser la aventura definitiva para los fans.
+      </p>
+    </div>
+    <!-- Características del juego -->
+    <div class="features">
+      <h2>Características del Juego</h2>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Compatibilidad para dispositivos de 32 bits</li>
+        <li><i class="fa-solid fa-screwdriver-wrench"></i> Optimización de sprites: Adiós a los problemas de pantalla negra 👋</li>
+        <li><i class="fa-solid fa-trophy"></i> Tabla de clasificación en línea: Compite por el top en el modo 1v1 (sin multijugador aún, pero en pruebas).</li>
+        <li><i class="fa-solid fa-envelope"></i> Registro y guardado con correo y contraseña: ¡No pierdas tu progreso al borrar el juego! 🔐</li>
+        <li><i class="fa-solid fa-gamepad"></i> Menú principal y selección de modos: Ahora todo más organizado.</li>
+        <li><i class="fa-solid fa-globe"></i> Nuevos idiomas: ¡Bienvenido, portugués e inglés! 🇧🇷🇬🇧</li>
+        <li><i class="fa-solid fa-crosshairs"></i> Corrección de bugs en combate: No habrá nuevos personajes, pero sí mejoras.</li>
+        <li><i class="fa-solid fa-image"></i> Escenarios disponibles: Los tres mapas listos para explorar.</li>
+        <li><i class="fa-solid fa-gear"></i> Menú de configuraciones: Ajusta el volumen y estira la pantalla.</li>
+        <li><i class="fa-solid fa-sliders"></i> Controles personalizables: ¡Reposiciona botones, cambia su opacidad y tamaño! 🛠️</li>
+      </ul>
+    </div>
+    <!-- Requisitos -->
+    <div class="requirements">
+      <h2>Requisitos</h2>
+      <p>Android 7.0 pa' adelante</p>
+      <p>Dispositivos de 32 bits</p>
+    </div>
+    <!-- Sección de descarga con interacción -->
+    <div class="download-section">
+      <p>
+        Para acceder al enlace de descarga, desbloquéalo viendo 15 anuncios. Cada anuncio dura 5 segundos.
+      </p>
+      <button id="downloadBtn" class="download-btn">Ver anuncio y desbloquear descarga</button>
+      <div id="countdown" class="countdown"></div>
+      <div id="progress" style="margin-top:10px;">Anuncios vistos: 0/15</div>
+    </div>
+    <!-- Aviso importante -->
+    <div class="alert">
+      ¡IMPORTANTE! El juego tiene muy poco tiempo de desarrollo y está en una etapa muy templana.
+    </div>
+  </div>
+
+  <script>
+    // --- Lógica del popunder ---
+    document.addEventListener("DOMContentLoaded", function(){
+      const popunder = document.getElementById("popunder");
+      const closeBtn = document.getElementById("closePopunder");
+      
+      // Deshabilitar el botón de cerrar durante 5 segundos
+      closeBtn.disabled = true;
+      setTimeout(() => {
+        closeBtn.disabled = false;
+      }, 5000);
+      
+      closeBtn.addEventListener("click", function(){
+        popunder.style.display = "none";
+        // Después de 6 segundos, volver a mostrar el popunder y reiniciar el bloqueo de 5 segundos para cerrar
+        setTimeout(() => {
+          popunder.style.display = "block";
+          closeBtn.disabled = true;
+          setTimeout(() => {
+            closeBtn.disabled = false;
+          }, 5000);
+        }, 6000);
+      });
+    });
+
+    // --- Lógica de la sección de descarga ---
+    const totalClicksRequired = 15;
+    let currentClicks = 0;
+    const downloadBtn = document.getElementById('downloadBtn');
+    const countdownEl = document.getElementById('countdown');
+    const progressEl = document.getElementById('progress');
+
+    downloadBtn.addEventListener('click', () => {
+      if (downloadBtn.disabled) return;
+
+      // Abre la página del anuncio en una nueva pestaña (simula la redirección a la URL intermedia)
+      window.open('https://poawooptugroo.com/4/8912167', '_blank');
+
+      // Deshabilita el botón y comienza la cuenta regresiva de 5 segundos
+      downloadBtn.disabled = true;
+      let timer = 5;
+      countdownEl.textContent = `Espera ${timer} segundos...`;
+
+      gsap.to({ val: timer }, {
+        val: 0,
+        duration: 5,
+        ease: "none",
+        onUpdate: function () {
+          const currentVal = Math.ceil(this.targets()[0].val);
+          countdownEl.textContent = `Espera ${currentVal} segundo${currentVal === 1 ? '' : 's'}...`;
+        },
+        onComplete: function () {
+          currentClicks++;
+          progressEl.textContent = `Anuncios vistos: ${currentClicks}/${totalClicksRequired}`;
+          countdownEl.textContent = '';
+          downloadBtn.disabled = false;
+
+          gsap.fromTo(downloadBtn, { scale: 0.95 }, { scale: 1, duration: 0.3, ease: "power1.out" });
+
+          if (currentClicks >= totalClicksRequired) {
+            gsap.to(downloadBtn, { backgroundColor: "#4caf50", duration: 0.5 });
+            downloadBtn.textContent = "Descargar Meteor Legends";
+            downloadBtn.addEventListener('click', () => {
+              window.location.href = 'https://drive.google.com/file/d/1FKhagCb1o17vGaN6JHQs9yTltzb4G3pJ/view';
+            }, { once: true });
+          }
+        }
+      });
+    });
+
+    // --- Animaciones de entrada con GSAP ---
+    gsap.from("header", { y: -50, opacity: 0, duration: 1 });
+    gsap.from(".description", { opacity: 0, y: 30, duration: 1, delay: 1 });
+    gsap.from(".features", { opacity: 0, y: 30, duration: 1, delay: 1.5 });
+    gsap.from(".download-section", { opacity: 0, y: 30, duration: 1, delay: 2 });
+    gsap.from(".alert", { opacity: 0, duration: 1, delay: 2.5 });
+  </script>
+</body>
+</html>
